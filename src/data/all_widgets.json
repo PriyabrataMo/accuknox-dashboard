@@ -1,0 +1,22 @@
+[
+  {
+    "id": "2917c291-bd0d-4b35-a5ff-c6dd4e1cc10f",
+    "name": "Greeting Widget",
+    "text": "Hello, User!"
+  },
+  {
+    "id": "273fdf54-c416-48ee-8e00-26acd55089c4",
+    "name": "Stats Widget",
+    "text": "Total Visitors: 1024"
+  },
+  {
+    "id": "a670b85a-56f4-4894-8dae-bd465f2cb289",
+    "name": "News Feed Widget",
+    "text": "Latest news updates will appear here."
+  },
+  {
+    "id": "40812dc5-b5d2-401e-94af-8588b17f7641",
+    "name": "Weather Widget",
+    "text": "Sunny, 25°C"
+  }
+] 
