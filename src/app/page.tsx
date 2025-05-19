@@ -3,26 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Category, Widget } from "@/types";
 import initialCategoriesData from "@/data/categories.json";
 import initialAllWidgetsData from "@/data/all_widgets.json";
-import {
-  PlusCircle,
-  Trash2,
-  Edit,
-  Search,
-  Settings2,
-  Sun,
-  Moon,
-} from "lucide-react";
+import { PlusCircle, Trash2, Edit, Search, Sun, Moon } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -72,7 +58,6 @@ export default function DashboardPage() {
   const [sheetCategoryId, setSheetCategoryId] = useState<string>("");
   const [manageWidgetsOpen, setManageWidgetsOpen] = useState(false);
   const [editingWidget, setEditingWidget] = useState<Widget | null>(null);
-  const activeCategory = categories.find((cat) => cat.id === sheetCategoryId);
 
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -283,7 +268,9 @@ export default function DashboardPage() {
           </div>
         ) : (
           <div className="text-center text-muted-foreground py-10">
-            <p className="text-xl">No widgets found for "{searchTerm}".</p>
+            <p className="text-xl">
+              No widgets found for &quot;{searchTerm}&quot;.
+            </p>
           </div>
         )
       ) : (
@@ -291,7 +278,8 @@ export default function DashboardPage() {
           {filteredCategories.length === 0 && (
             <div className="text-center text-muted-foreground py-10">
               <p className="text-xl">
-                No categories yet. Click "Add Category" to get started.
+                No categories yet. Click &quot;Add Category&quot; to get
+                started.
               </p>
             </div>
           )}
@@ -323,9 +311,9 @@ export default function DashboardPage() {
                         <AlertDialogHeader>
                           <AlertDialogTitle>Delete Category</AlertDialogTitle>
                           <AlertDialogDescription>
-                            Are you sure you want to delete the category "
-                            {category.name}" and all its widgets? This action
-                            cannot be undone.
+                            Are you sure you want to delete the category &quot;
+                            {category.name}&quot; and all its widgets? This
+                            action cannot be undone.
                           </AlertDialogDescription>
                         </AlertDialogHeader>
                         <AlertDialogFooter>
@@ -566,8 +554,8 @@ export default function DashboardPage() {
                       <AlertDialogHeader>
                         <AlertDialogTitle>Delete Widget</AlertDialogTitle>
                         <AlertDialogDescription>
-                          Are you sure you want to delete the widget "
-                          {widget.name}"? This action cannot be undone.
+                          Are you sure you want to delete the widget &quot;
+                          {widget.name}&quot;? This action cannot be undone.
                         </AlertDialogDescription>
                       </AlertDialogHeader>
                       <AlertDialogFooter>
