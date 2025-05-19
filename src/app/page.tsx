@@ -251,7 +251,7 @@ export default function DashboardPage() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
             type="search"
-            placeholder="Search widgets or categories..."
+            placeholder="Search widgets..."
             className="pl-10 w-full"
             value={searchTerm}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
