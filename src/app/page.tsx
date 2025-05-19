@@ -8,7 +8,15 @@ import { Separator } from "@/components/ui/separator";
 import { Category, Widget } from "@/types";
 import initialCategoriesData from "@/data/categories.json";
 import initialAllWidgetsData from "@/data/all_widgets.json";
-import { PlusCircle, Trash2, Edit, Search, Sun, Moon } from "lucide-react";
+import {
+  PlusCircle,
+  Trash2,
+  Edit,
+  Search,
+  Sun,
+  Moon,
+  Github,
+} from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -204,22 +212,38 @@ export default function DashboardPage() {
             Manage your widgets and categories.
           </p>
         </div>
-        {mounted && (
+        <div className="flex gap-2 items-center">
           <Button
             variant="outline"
             size="icon"
             onClick={() =>
-              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+              window.open(
+                "https://github.com/PriyabrataMo/accuknox-dashboard",
+                "_blank",
+                "noopener,noreferrer"
+              )
             }
             aria-label="Toggle theme"
           >
-            {resolvedTheme === "dark" ? (
-              <Sun className="h-4 w-4" />
-            ) : (
-              <Moon className="h-4 w-4" />
-            )}
+            <Github className="h-4 w-4" />
           </Button>
-        )}
+          {mounted && (
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() =>
+                setTheme(resolvedTheme === "dark" ? "light" : "dark")
+              }
+              aria-label="Toggle theme"
+            >
+              {resolvedTheme === "dark" ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
+            </Button>
+          )}
+        </div>
       </header>
 
       <div className="flex flex-col md:flex-row gap-4 mb-6 items-center">
@@ -236,7 +260,7 @@ export default function DashboardPage() {
           />
         </div>
         <div className="flex gap-2 flex-shrink-0">
-          <Button onClick={handleCreateWidget}>
+          <Button variant="outline" onClick={handleCreateWidget}>
             <PlusCircle className="mr-2 h-4 w-4" /> Create Widget
           </Button>
 
