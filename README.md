@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AccuKnox Dashboard
 
-## Getting Started
+A dynamic dashboard built with Next.js that allows users to customize their view by adding and removing widgets across different categories.
 
-First, run the development server:
+Live demo: [https://dash.priyabratamondal.com/](https://dash.priyabratamondal.com/)
+
+## Features
+
+- **Dynamic Widget Management**: JSON-based structure for organizing categories and widgets
+- **Customizable Categories**: Each category can contain multiple widgets
+- **Add/Remove Widgets**: Users can dynamically add or remove widgets from any category
+- **Widget Search**: Search functionality to find widgets across all categories
+- **Responsive Design**: Works on desktop and mobile devices
+
+## Implementation Details
+
+1. **Dynamic JSON Structure**
+
+   - Dashboard is built using a JSON structure that contains categories and widgets
+   - Each category can have multiple widgets
+   - This approach allows for flexible and dynamic dashboard configuration
+
+2. **Widget Management**
+
+   - Users can add widgets via the "+Add Widget" functionality
+   - Widget creation includes specifying name, content text, and category assignment
+   - Widgets can be removed via the cross icon or by unchecking from category lists
+
+3. **Search Functionality**
+
+   - Global search allows users to find widgets across all categories
+   - Results update in real-time as users type
+
+4. **State Management**
+   - Uses a store management system for handling widget additions/removals
+   - State persists during the session
+
+## Technologies Used
+
+- **Frontend Framework**: Next.js with React
+- **Styling**: CSS with modern styling approach
+- **State Management**: Custom store implementation
+- **Fonts**: Geist Sans and Geist Mono for a clean, modern look
+- **Theme Support**: Light and dark mode with system preference detection
+
+## Setup Instructions
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd accuknox-dash
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   pnpm dev
+   ```
+
+4. **Open in browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Build for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm build
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app`: Next.js app router pages
+- `src/components`: Reusable UI components
+  - `dashboard`: Dashboard-specific components
+  - `ui`: Generic UI components
+- `src/data`: Data models and mock data
+- `src/lib/store`: State management
+- `src/types`: TypeScript type definitions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage Guide
 
-## Learn More
+1. **Viewing Categories**
 
-To learn more about Next.js, take a look at the following resources:
+   - Dashboard displays all available categories with their widgets
+   - Each category is a collapsible section
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Adding a Widget**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   - Click "+Add Widget"
+   - Enter widget name and content
+   - Select the category to add it to
+   - Submit to see it appear in the selected category
 
-## Deploy on Vercel
+3. **Removing a Widget**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   - Click the "×" icon on any widget to remove it
+   - Alternatively, go to category settings and uncheck widgets
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Searching Widgets**
+   - Use the search bar to find widgets by name
+   - Results update as you type
+
+## Contact
+
+Email - priyabrata8558@gmail.com
